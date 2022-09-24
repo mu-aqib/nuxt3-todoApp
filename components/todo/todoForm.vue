@@ -1,3 +1,10 @@
+<script setup lang="ts">
+    let todo = reactive({
+        title: '',
+        
+    })
+</script>
+
 <template>
     <!-- New Todo -->
     <section class="create-todo">

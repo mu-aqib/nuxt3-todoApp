@@ -20,7 +20,14 @@
       </section>
       <!-- End of Greeting -->
 	  </main>
+
     <todoForm></todoForm>
-    <todo></todo>
+
+    <!-- Todo List -->
+    <section class="todo-list">
+      <h3>TODO LIST</h3>
+        <todo v-for="todo in todos" :key="todo.id" :todoItem="todo"></todo>
+    </section>
+    <!-- End of Todo List -->
   </div>
 </template>

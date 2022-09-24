@@ -1,22 +1,25 @@
+<script setup>
+    // let {data: todos} = useFetch('/api/todo');
+    const props = defineProps({
+        todoItem: Object,
+    })
+</script>
 <template>
-    <!-- Todo List -->
-    <section class="todo-list">
-        <h3>TODO LIST</h3>
-        <div class="list" id="todo-list">
-            <div class="todo-item">
+
+    <div class="list" id="todo-list">
+        <div class="todo-item">
             <label>
-                <input type="checkbox">
+                <input type="checkbox" :checked="todoItem.completed">
                 <span class="bubble business"></span>
             </label>
             <div class="todo-content">
-                <input type="text" value="sfldslf" readonly>
+                <input type="text" :value="todoItem.title" readonly>
             </div>
             <div class="actions">
                 <button class="edit">Edit</button>
                 <button class="delete">Delete</button>
             </div>
-            </div>
         </div>
-    </section>
-    <!-- End of Todo List -->
+    </div>
+
 </template>
