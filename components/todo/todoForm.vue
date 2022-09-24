@@ -11,7 +11,7 @@
         <h3>CREATE A TODO</h3>
         <form id="new-todo-form">
             <h4>What's on your todo?</h4>
-            <input type="text" placeholder="e.g. Get some milk" name="content" id="" />
+            <input type="text" v-model="todo.title" placeholder="e.g. Get some milk" name="content" id="" />
             <h4>Pick a category</h4>
             <div class="options">
             <label>
