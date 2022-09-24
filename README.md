@@ -1,2 +1,42 @@
-# nuxt3-todoApp
-In my Nuxt3 application, I'll demonstrate how to fetch data from the server side to nuxt server and then display it on the client side. In comparison to vue, which allows us to use fetch requests and render data, nuxt does not.. In nuxt we have different methods on which we can communicate with nuxt-server and server.
+# Nuxt 3 Minimal Starter
+
+Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install --shamefully-hoist
+```
+
+## Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
