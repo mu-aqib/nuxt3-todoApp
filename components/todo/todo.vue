@@ -20,7 +20,7 @@
         <div class="todo-item">
             <label>
                 <input type="checkbox" :checked="todoItem.completed">
-                <span class="bubble" :class="[todoItem.category ? 'personal' : '']"></span>
+                <span class="bubble" :class="[todoItem.category === 'personal' ? 'personal' : '']"></span>
             </label>
             <div class="todo-content">
                 <input type="text" :value="todoItem.title" readonly>

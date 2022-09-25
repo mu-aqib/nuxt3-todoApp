@@ -2,13 +2,14 @@
 import { db } from '../../db/index'
 export default defineEventHandler( async (e)=>{
     let request = e.req.method;
+    
     // get request 
     if(request === "GET")
         return db.todo;
+
     // post request
     if(request === "POST"){
-        let {data} = await useBody(e);
-        console.log(data);
+        let data = await useBody(e);
         const newTodo = {
             id: new Date().toISOString(),
             title: data.title,
@@ -19,9 +20,5 @@ export default defineEventHandler( async (e)=>{
 
         return newTodo;
     }
-    // put request
-
-    // delete request
-
     
 } )
