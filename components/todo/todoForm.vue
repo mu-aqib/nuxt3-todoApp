@@ -21,6 +21,7 @@
     <!-- New Todo -->
     <section class="create-todo">
         <h3>CREATE A TODO</h3>
+        {{todo}}
         <form id="new-todo-form">
             <h4>What's on your todo?</h4>
             <input type="text" v-model="todo.title" placeholder="e.g. Get some milk" name="content" id="" />
@@ -32,7 +33,7 @@
                 <div>Business</div>
             </label>
             <label>
-                <input type="radio" name="category" id="category2" value="personal" />
+                <input type="radio" name="category" v-model="todo.category" id="category2" value="personal" />
                 <span class="bubble personal"></span>
                 <div>Personal</div>
             </label>

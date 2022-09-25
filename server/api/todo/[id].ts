@@ -4,20 +4,28 @@ export default defineEventHandler( async (e)=>{
     let request = e.req.method;
     const { id } = e.context.params;
 
-    // put request
-    if(request === "PUT"){
+    let findTodoById = ()=>{
 
-        // find given id item
         let index = null;
+
         let Item = db.todo.find((data, i)=>{
             index = i;
             return data.id === id;
         })
+
+        return { index, Item };
+    }
+
+    // put request
+    if(request === "PUT"){
+
+        // find given id item
+        let { index, Item } = findTodoById();
         
         // edit data with new data
         Item.completed = !Item.completed;
 
-        // push data
+        // update data
         db.todo[index] = Item; 
 
         // return db.todo[id];
@@ -25,4 +33,15 @@ export default defineEventHandler( async (e)=>{
     }
 
     // delete request
+    if(request === "DELETE"){
+        // find item
+        let { index } = findTodoById();
+
+        // pop item from array
+        db.todo.splice(index, 1);
+
+        return {
+            message: "data has been deleted successfully",
+        };
+    }
 } )

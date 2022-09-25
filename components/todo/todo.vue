@@ -15,7 +15,7 @@
 
     async function deletTodoItem(id){
         await $fetch('/api/todo/'+id, { 
-            method: "delet",
+            method: "delete",
         })
     }
     
