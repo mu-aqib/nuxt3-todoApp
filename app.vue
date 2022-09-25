@@ -1,4 +1,5 @@
-<script setup lang="ts">
+<script setup>
+
   // {data} is used for destructing data fromm useFetch method
   let {data: todos} = useFetch('/api/todo');
 
@@ -10,6 +11,7 @@
 <template>
 
   <div class="container">
+    {{todos}}
 
     <main class="app">
       <!-- Greeting -->
