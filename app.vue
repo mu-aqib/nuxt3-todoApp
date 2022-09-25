@@ -11,7 +11,6 @@
 <template>
 
   <div class="container">
-    {{todos}}
 
     <main class="app">
       <!-- Greeting -->

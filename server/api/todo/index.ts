@@ -7,12 +7,13 @@ export default defineEventHandler( async (e)=>{
         return db.todo;
     // post request
     if(request === "POST"){
-        let data = await useBody(e);
+        let {data} = await useBody(e);
+        console.log(data);
         const newTodo = {
             id: new Date().toISOString(),
             title: data.title,
             category: data.category,
-            completed: data.completed,
+            completed: false,
         }
         db.todo.push(newTodo);
 

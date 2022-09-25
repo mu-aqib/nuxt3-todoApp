@@ -1,12 +1,19 @@
 <script setup>
+
     // import 
     let todo = reactive({
         title: '',
         category: '',
     });
 
-    function addTodo(){
-        
+    let addTodo = async (e)=>{
+        // alert()
+        await $fetch('/api/todo', { 
+            method: "post",
+            body: {
+                data: todo
+            }
+        })
     }
 </script>
 
@@ -31,7 +38,7 @@
             </label>
             </div>
 
-            <input type="submit" value="Add todo" />
+            <input type="submit" @click.prevent="addTodo()" value="Add todo" />
         </form>
     </section>
     <!-- End of New Todo -->
