@@ -1,4 +1,5 @@
 import { db } from '../../db/index'
+
 export default defineEventHandler( async (e)=>{
     let request = e.req.method;
     const { id } = e.context.params;
@@ -7,21 +8,20 @@ export default defineEventHandler( async (e)=>{
     if(request === "PUT"){
 
         // find given id item
-        let Item = db.todo.find(data=>{
+        let index = null;
+        let Item = db.todo.find((data, i)=>{
+            index = i;
             return data.id === id;
         })
-
-
+        
         // edit data with new data
-        let updatedItem = {
-            ...Item,
-            completed: !Item.completed
-        }
-        console.log(updatedItem, Item)
+        Item.completed = !Item.completed;
+
         // push data
-        // db.todo[id] = updatedItem;
+        db.todo[index] = Item; 
 
         // return db.todo[id];
+        return db.todo[index]
     }
 
     // delete request
