@@ -4,16 +4,10 @@
         todoItem: Object,
     })
 
+    const message = ref('hello');
 
     // destructing function from composable
     const { deletTodoItem, editTodoItem } = useTodos();
-
-    function deleteItem(id) {
-        deletTodoItem(id).then( e => {
-            message = e;
-            console.log(message)
-        });
-    }
     
 </script>
 <template>
@@ -28,7 +22,7 @@
                 <input type="text" :value="todoItem.title" readonly>
             </div>
             <div class="actions">
-                <button class="delete" @click="deleteItem(todoItem.id)">Delete</button>
+                <button class="delete" @click="deletTodoItem(todoItem.id)">Delete</button>
             </div> 
         </div>
 

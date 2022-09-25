@@ -5,15 +5,15 @@ const useTodos = ()=>{
     });
 
     async function editTodoItem(id){
-        await $fetch('/api/todo/'+id, { method: "put" })
+        let res = await $fetch('/api/todo/'+id, { method: "put" })
         refresh();
     }
-    
+
     async function deletTodoItem(id){
-        let response = await $fetch('/api/todo/'+id, {  method: "delete", })
-        refresh()
-        return response;
+        let res = await $fetch('/api/todo/'+id, { method: "delete" })
+        refresh();
     }
+
     
     let addTodo = async (todo)=>{
         await $fetch('/api/todo', { 
