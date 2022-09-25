@@ -1,8 +1,13 @@
-<script setup lang="ts">
+<script setup>
+    // import 
     let todo = reactive({
         title: '',
-        
-    })
+        category: '',
+    });
+
+    function addTodo(){
+
+    }
 </script>
 
 <template>
@@ -15,7 +20,7 @@
             <h4>Pick a category</h4>
             <div class="options">
             <label>
-                <input type="radio" name="category" id="category1" value="business" /> 
+                <input type="radio" v-model="todo.category" name="category" id="category1" value="business" /> 
                 <span class="bubble business"></span>
                 <div>Business</div>
             </label>
