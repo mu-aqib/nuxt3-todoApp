@@ -1,11 +1,5 @@
 <script setup>
-
-  // {data} is used for destructing data fromm useFetch method
-  let {data: todos} = useFetch('/api/todo');
-
-  function deletItem(id){
-    alert(id)
-  }
+    const { todos } = useTodos();
 </script>
 
 <template>
@@ -16,7 +10,7 @@
       <!-- Greeting -->
       <section class="greeting">
         <h2 class="title">
-          What's up, <input type="text" id="name" placeholder="Name here" />
+          Welcome !
         </h2>
       </section>
       <!-- End of Greeting -->

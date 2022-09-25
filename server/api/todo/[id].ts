@@ -41,7 +41,7 @@ export default defineEventHandler( async (e)=>{
         db.todo.splice(index, 1);
 
         return {
-            message: "data has been deleted successfully",
+            resMessage: "data has been deleted successfully",
         };
     }
 } )

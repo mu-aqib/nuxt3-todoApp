@@ -6,22 +6,14 @@
         category: '',
     });
 
-    let addTodo = async (e)=>{
-        // alert()
-        await $fetch('/api/todo', { 
-            method: "post",
-            body: {
-                data: todo
-            }
-        })
-    }
+    const { addTodo } = useTodos();
+
 </script>
 
 <template>
     <!-- New Todo -->
     <section class="create-todo">
-        <h3>CREATE A TODO</h3>
-        {{todo}}
+    
         <form id="new-todo-form">
             <h4>What's on your todo?</h4>
             <input type="text" v-model="todo.title" placeholder="e.g. Get some milk" name="content" id="" />
@@ -39,7 +31,7 @@
             </label>
             </div>
 
-            <input type="submit" @click.prevent="addTodo()" value="Add todo" />
+            <input type="submit" @click.prevent="addTodo(todo)" value="Add todo" />
         </form>
     </section>
     <!-- End of New Todo -->
